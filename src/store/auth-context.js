@@ -11,12 +11,13 @@ export const AuthContextProvider = (props) => {
   const [token, setToken] = useState(null);
 
   const userIsLoggedIn = !!token;
+
   const logInHandler = (token) => {
     setToken(token);
   };
   const logOutHandler = () => {
     setToken(null);
-    console.log(token)
+    console.log(token);
   };
 
   const contextValue = {
@@ -24,6 +25,7 @@ export const AuthContextProvider = (props) => {
     isLoggedIn: userIsLoggedIn,
     login: logInHandler,
     logout: logOutHandler,
+    msg: 'I am accessible everywhere'
   };
 
   return (
